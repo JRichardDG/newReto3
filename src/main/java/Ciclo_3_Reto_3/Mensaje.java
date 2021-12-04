@@ -32,7 +32,7 @@ public class Mensaje implements Serializable {
     @ManyToOne
     @JoinColumn(name="id")
     @JsonIgnoreProperties({"message","client","reservations"})
-    private library library;
+    private library lib;
     //private Mensaje message;
     
     @ManyToOne
@@ -65,11 +65,11 @@ public class Mensaje implements Serializable {
     }
 
     public library getLibrary() {
-        return library;
+        return lib;
     }
 
     public void setLibrary(library library) {
-        this.library = library;
+        this.lib = library;
     }
     
     

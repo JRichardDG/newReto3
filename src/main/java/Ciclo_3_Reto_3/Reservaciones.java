@@ -35,9 +35,9 @@ public class Reservaciones implements Serializable {
     private String  status="created";
     
     @ManyToOne
-    @JoinColumn(name="LibraryId")
+    @JoinColumn(name="id")
     @JsonIgnoreProperties({"message, reservations"})
-    private library library;
+    private library lib;
     
     @ManyToOne
     @JoinColumn(name="clientId")
@@ -83,11 +83,11 @@ public class Reservaciones implements Serializable {
     }
 
     public library getLibrary() {
-        return library;
+        return lib;
     }
 
     public void setLibrary(library library) {
-        this.library = library;
+        this.lib = library;
     }
 
     public Cliente getClient() {

@@ -27,7 +27,7 @@ public class library {
     
     @ManyToOne
     @JoinColumn(name="CategoriaId")
-    @JsonIgnoreProperties("library")
+    @JsonIgnoreProperties("libs")
     private Categoria category;
     
     @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST}, mappedBy = "library")
