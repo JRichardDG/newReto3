@@ -32,7 +32,7 @@ public class library {
     
     @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST}, mappedBy = "lib")
     @JsonIgnoreProperties({"lib", "client"})
-    private List<Mensaje> message;
+    private List<Mensaje> messages;
     
     @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST}, mappedBy = "lib")
     @JsonIgnoreProperties({"lib", "client"})
@@ -87,11 +87,11 @@ public class library {
     }
 
     public List<Mensaje> getMessage() {
-        return message;
+        return messages;
     }
 
     public void setMessage(List<Mensaje> message) {
-        this.message = message;
+        this.messages = message;
     }
 
     public List<Reservaciones> getReservations() {

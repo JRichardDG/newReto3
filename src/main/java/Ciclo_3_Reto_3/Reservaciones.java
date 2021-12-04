@@ -36,12 +36,12 @@ public class Reservaciones implements Serializable {
     
     @ManyToOne
     @JoinColumn(name="id")
-    @JsonIgnoreProperties({"message", "reservations", "client"})
+    @JsonIgnoreProperties({"messages", "reservations", "client"})
     private library lib;
     
     @ManyToOne
     @JoinColumn(name="clientId")
-    @JsonIgnoreProperties({"message", "reservations"})
+    @JsonIgnoreProperties({"messages", "reservations"})
     
     private Cliente client;
     
@@ -82,12 +82,12 @@ public class Reservaciones implements Serializable {
         this.status = status;
     }
 
-    public library getLibrary() {
+    public library getLib() {
         return lib;
     }
 
-    public void setLibrary(library library) {
-        this.lib = library;
+    public void setLib(library lib) {
+        this.lib = lib;
     }
 
     public Cliente getClient() {
@@ -105,7 +105,8 @@ public class Reservaciones implements Serializable {
     public void setScore(String score) {
         this.score = score;
     }
-    
+
+
 
 
 
