@@ -35,13 +35,13 @@ public class Reservaciones implements Serializable {
     private String  status="created";
     
     @ManyToOne
-    @JoinColumn(name="PartyroomId")
-    @JsonIgnoreProperties({"messages, reservations"})
+    @JoinColumn(name="LibraryId")
+    @JsonIgnoreProperties({"message, reservations"})
     private library library;
     
     @ManyToOne
     @JoinColumn(name="clientId")
-    @JsonIgnoreProperties({"messages, reservations"})
+    @JsonIgnoreProperties({"message, reservations"})
     
     private Cliente client;
     
