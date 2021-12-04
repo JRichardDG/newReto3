@@ -26,16 +26,16 @@ public class library {
     private String  description; 
     
     @ManyToOne
-    @JoinColumn(name="CategoriaId")
+    @JoinColumn(name="category")
     @JsonIgnoreProperties("libs")
     private Categoria category;
     
-    @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST}, mappedBy = "library")
-    @JsonIgnoreProperties({"library", "client"})
+    @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST}, mappedBy = "lib")
+    @JsonIgnoreProperties({"lib", "client"})
     private List<Mensaje> message;
     
-    @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST}, mappedBy = "library")
-    @JsonIgnoreProperties({"library", "client"})
+    @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST}, mappedBy = "lib")
+    @JsonIgnoreProperties({"lib", "client"})
     private List<Reservaciones> reservations;
 
     public Integer getId() {

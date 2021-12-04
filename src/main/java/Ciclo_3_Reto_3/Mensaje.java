@@ -31,13 +31,13 @@ public class Mensaje implements Serializable {
     
     @ManyToOne
     @JoinColumn(name="id")
-    @JsonIgnoreProperties({"message","client","reservations"})
+    @JsonIgnoreProperties({"lib","message","reservations"})
     private library lib;
     //private Mensaje message;
     
     @ManyToOne
     @JoinColumn(name="clientId")
-    @JsonIgnoreProperties({"messages", "reservations", "client"})
+    @JsonIgnoreProperties({"client","messages", "reservations"})
     private Cliente client;
 
     public Integer getIdMessage() {
