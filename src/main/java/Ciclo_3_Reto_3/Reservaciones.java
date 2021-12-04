@@ -28,7 +28,6 @@ import javax.persistence.Table;
 public class Reservaciones implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     private Integer IdReservation;
     private Date    startDate;
     private Date    devolutionDate;
