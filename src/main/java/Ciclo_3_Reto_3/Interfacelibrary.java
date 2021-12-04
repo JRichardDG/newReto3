@@ -11,6 +11,6 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author g6
  */
-public interface Interfacelibrary extends CrudRepository<library, Integer> {
+public interface Interfacelibrary extends CrudRepository<Library, Integer> {
     
 }

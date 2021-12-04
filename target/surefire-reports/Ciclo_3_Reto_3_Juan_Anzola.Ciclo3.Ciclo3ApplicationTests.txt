@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: Ciclo_3_Reto_3_Juan_Anzola.Ciclo3.Ciclo3ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.723 s <<< FAILURE! - in Ciclo_3_Reto_3_Juan_Anzola.Ciclo3.Ciclo3ApplicationTests
+Ciclo_3_Reto_3_Juan_Anzola.Ciclo3.Ciclo3ApplicationTests  Time elapsed: 4.721 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
+

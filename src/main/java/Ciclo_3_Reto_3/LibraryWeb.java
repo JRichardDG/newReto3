@@ -26,24 +26,24 @@ public class LibraryWeb {
     private ServiciosLibrary servicios;
     
     @GetMapping("/all")
-    public List <library> getPartyroom(){
+    public List <Library> getPartyroom(){
         return servicios.getAll();
     }
     
     @GetMapping("/{id}")
-    public Optional <library> getPartyroom(@PathVariable("id") int idLibrary) {
+    public Optional <Library> getPartyroom(@PathVariable("id") int idLibrary) {
         return servicios.getLibrary(idLibrary);
     } 
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public library save(@RequestBody library library){
+    public Library save(@RequestBody Library library){
         return servicios.save(library);
     }    
     
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public library update(@RequestBody library library){
+    public Library update(@RequestBody Library library){
         return servicios.update(library);
     }
     

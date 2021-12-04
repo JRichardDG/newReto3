@@ -11,19 +11,19 @@ public class ServiciosLibrary{
     @Autowired
     private RepositorioLibrary metodosCrud;
 
-    public List<library> getAll() {
+    public List<Library> getAll() {
         return metodosCrud.getALl();
     }
 
-    public Optional<library> getLibrary(int idLibrary) {
+    public Optional<Library> getLibrary(int idLibrary) {
         return metodosCrud.getLibrary(idLibrary);
     }
 
-    public library save(library library) {
+    public Library save(Library library) {
         if (library.getId() == null) {
             return metodosCrud.save(library);
         } else {
-            Optional<library> evt = metodosCrud.getLibrary(library.getId());
+            Optional<Library> evt = metodosCrud.getLibrary(library.getId());
             if (evt.isEmpty()) {
                 return metodosCrud.save(library);
             } else {
@@ -32,9 +32,9 @@ public class ServiciosLibrary{
         }
     }
 
-    public library update(library library) {
+    public Library update(Library library) {
         if (library.getId() != null) {
-            Optional<library> evt = metodosCrud.getLibrary(library.getId());
+            Optional<Library> evt = metodosCrud.getLibrary(library.getId());
             if (!evt.isEmpty()) {
                 if (library.getName() != null) {
                     evt.get().setTarget(library.getTarget());

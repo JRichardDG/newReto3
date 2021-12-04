@@ -21,19 +21,19 @@ public class RepositorioLibrary {
     @Autowired
     private Interfacelibrary crud;
     
-    public List<library> getALl(){
-        return (List<library>) crud.findAll();
+    public List<Library> getALl(){
+        return (List<Library>) crud.findAll();
     }
     
-    public Optional <library> getLibrary(int id){
+    public Optional <Library> getLibrary(int id){
         return crud.findById(id);
     }
     
-    public library save(library partyroom){
+    public Library save(Library partyroom){
         return crud.save(partyroom);
     }
     
-    public void delete (library partyroom){
+    public void delete (Library partyroom){
         crud.delete(partyroom);
     }
 }

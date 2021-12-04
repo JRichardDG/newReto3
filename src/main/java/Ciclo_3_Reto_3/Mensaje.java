@@ -32,7 +32,7 @@ public class Mensaje implements Serializable {
     @ManyToOne
     @JoinColumn(name="id")
     @JsonIgnoreProperties({"lib","messages","reservations"})
-    private library lib;
+    private Library lib;
     //private Mensaje message;
     
     @ManyToOne
@@ -56,6 +56,14 @@ public class Mensaje implements Serializable {
         this.messageText = messageText;
     }
 
+    public Library getLib() {
+        return lib;
+    }
+
+    public void setLib(Library lib) {
+        this.lib = lib;
+    }
+
     public Cliente getClient() {
         return client;
     }
@@ -64,13 +72,7 @@ public class Mensaje implements Serializable {
         this.client = client;
     }
 
-    public library getLibrary() {
-        return lib;
-    }
-
-    public void setLibrary(library library) {
-        this.lib = library;
-    }
+    
     
     
 }

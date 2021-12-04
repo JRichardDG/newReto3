@@ -28,7 +28,7 @@ import javax.persistence.Table;
 public class Reservaciones implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer IdReservation;
+    private Integer idReservation;
     private Date    startDate;
     private Date    devolutionDate;
     private String  status="created";
@@ -36,7 +36,7 @@ public class Reservaciones implements Serializable {
     @ManyToOne
     @JoinColumn(name="id")
     @JsonIgnoreProperties({"messages", "reservations", "client"})
-    private library lib;
+    private Library lib;
     
     @ManyToOne
     @JoinColumn(name="clientId")
@@ -44,17 +44,24 @@ public class Reservaciones implements Serializable {
     
     private Cliente client;
     
+    public String getScore() {
+        return score;
+    }
+
     //@OneToOne(cascade = {CascadeType.REMOVE}, mappedBy = "reservation")
     //@JsonIgnoreProperties("reservation")
     //private Score score;
+    public void setScore(String score) {
+        this.score = score;
+    }
     private String score;
 
     public Integer getIdReservation() {
-        return IdReservation;
+        return idReservation;
     }
 
     public void setIdReservation(Integer idReservation) {
-        IdReservation = idReservation;
+        this.idReservation = idReservation;
     }
 
     public Date getStartDate() {
@@ -81,11 +88,11 @@ public class Reservaciones implements Serializable {
         this.status = status;
     }
 
-    public library getLib() {
+    public Library getLib() {
         return lib;
     }
 
-    public void setLib(library lib) {
+    public void setLib(Library lib) {
         this.lib = lib;
     }
 
@@ -96,17 +103,6 @@ public class Reservaciones implements Serializable {
     public void setClient(Cliente client) {
         this.client = client;
     }
-
-    public String getScore() {
-        return score;
-    }
-
-    public void setScore(String score) {
-        this.score = score;
-    }
-
-
-
 
 
 }
